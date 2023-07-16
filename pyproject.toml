@@ -2,7 +2,7 @@
 name = "imageClassificationService"
 version = "1.5.1"
 description = "To classify images"
-
+authors = ["Rushil Shah <shahrushil1999@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8.13"
