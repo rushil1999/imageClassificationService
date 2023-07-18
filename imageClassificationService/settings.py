@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-zb_%(gh)un6gp0^gzn@04!w7&lyw(^$ti4=aye&)1lrzaqo)%n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['image-classification-service.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
