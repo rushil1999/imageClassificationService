@@ -22,8 +22,6 @@ import os
     ...
 """ 
 
-modelSet = False
-model = None
 
 labels = {
     0: 'dress',
@@ -58,8 +56,7 @@ def load_model_from_s3(bucket_name, file_key):
 
 
         # Load the model from the local file
-        model = load_model(local_file_path)  # or the appropriate method to load your model
-        modelSet = True
+    model = load_model(local_file_path)  # or the appropriate method to load your model
     
     return model
 
