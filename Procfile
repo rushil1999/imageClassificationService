@@ -1,1 +1,1 @@
-web: gunicorn imageClassificationService.wsgi —log-file -
+web: gunicorn imageClassificationService.wsgi:application --log-file - --log-level debug
