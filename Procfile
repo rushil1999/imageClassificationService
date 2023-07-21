@@ -1,1 +1,1 @@
-web: gunicorn imageClassificationService.wsgi:application --log-file - --log-level debug
+web: gunicorn imageClassificationService.wsgi:application --log-file - --log-level debug --preload
