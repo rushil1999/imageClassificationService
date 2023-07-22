@@ -59,7 +59,7 @@ def predImg(request):
             context['predictedClass'] = labels[np.argmax(pred[0])] 
             context['probability'] = "{:.2f}".format(round(np.max(pred), 2)*100)
         else:
-            JsonResponse({'error': "Model didn't load Properly"})
+            return JsonResponse({'error': "Model didn't load Properly"})
 
         print("Delete file after execution", uploaded_file.name)
         fs.delete(uploaded_file.name)
