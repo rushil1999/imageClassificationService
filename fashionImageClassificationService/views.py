@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 # Create your views here.
-from fashionImageClassificationService.management.commands.preload_model import Command
 from keras.models import load_model 
 from keras.preprocessing import image 
 from keras.preprocessing.image import img_to_array, load_img 
@@ -14,7 +13,7 @@ from keras.applications.xception import preprocess_input
 import boto3
 from django.core.files.storage import FileSystemStorage
 import os
-
+from fashionImageClassificationService.apps import FashionimageclassificationserviceConfig
 
 """ ... 
     def index(): 
@@ -50,8 +49,11 @@ def predImg(request):
         x = np.array(img)
         X = np.array([x])
         X = preprocess_input(X)
-        model = Command.model
-        if(mode != None):
+        print(FashionimageclassificationserviceConfig.name)
+        print(FashionimageclassificationserviceConfig)
+        model = FashionimageclassificationserviceConfig.model
+        print(model)
+        if(model != None):
             pred = model.predict(X)
             
             context['predictedClass'] = labels[np.argmax(pred[0])] 
