@@ -4,6 +4,7 @@ import os
 from django.conf import settings
 from keras.models import load_model 
 import environ
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 def load_model_from_s3(bucket_name, file_key):
     local_file_path = os.path.join(settings.BASE_DIR, 'xception_v4_large_08_0.894.h5')  # Path to store the downloaded model file locally
