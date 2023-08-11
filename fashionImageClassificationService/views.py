@@ -38,6 +38,7 @@ image_size = (299, 299)
 def predImg(request):
     if request.method == 'POST': 
         context = {} 
+        print("reqeust", request, request.FILES)
         uploaded_file= request.FILES['img'] 
         fs = FileSystemStorage() 
         name = fs.save(uploaded_file.name, uploaded_file) 
@@ -62,4 +63,4 @@ def predImg(request):
         print("Delete file after execution", uploaded_file.name)
         fs.delete(uploaded_file.name)
         
-    return JsonResponse({'predictClass': labels[np.argmax(pred[0])] })
+    return JsonResponse({'predictClass': labels[np.argmax(pred[0])], 'probability': "{:.2f}".format(round(np.max(pred), 2)*10) })

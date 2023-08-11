@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-zb_%(gh)un6gp0^gzn@04!w7&lyw(^$ti4=aye&)1lrzaqo)%n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fashionview-11fb61f13e9d.herokuapp.com', '127.0.0.1', 'localhost', 'ec2-54-183-186-181.us-west-1.compute.amazonaws.com', '0.0.0.0', '54.183.186.181']
+ALLOWED_HOSTS = ['fashionview-11fb61f13e9d.herokuapp.com', '127.0.0.1', 'localhost', 'ec2-54-215-187-45.us-west-1.compute.amazonaws.com', '0.0.0.0', '54.215.187.45']
 
 
 # Application definition
@@ -141,7 +141,10 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:3000',
     'http://localhost:3030',
     'http://localhost:3000',
+    'http://0.0.0.0:3000',
 ]
+
+CSRF_TRUSTED_ORIGINS = ['http://0.0.0.0:3000','http://localhost:3000']
 
 # CORS Config
 CORS_ORIGIN_ALLOW_ALL = True
